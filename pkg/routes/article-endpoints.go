@@ -8,7 +8,6 @@ import (
 	"net/http"
 )
 
-// Existing code from above
 func ArticleEndPointsRequestHandler() {
 	// creates a new instance of a mux router
 	myRouter := mux.NewRouter().StrictSlash(true)

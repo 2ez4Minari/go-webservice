@@ -6,11 +6,11 @@ import (
 	"GoWebServiceWithCRUD/pkg/models"
 )
 
-var sqlConnectionString = "sqlserver://mgm-poc-user:super123@BCde@mgm-poc-db.database.windows.net:1433?database=mgm-poc-database&connection+timeout=30&charset=utf8mb4"
-var dbType = "mssql"
+var SqlConnectionString = "sqlserver://mgm-poc-user:super123@BCde@mgm-poc-db.database.windows.net:1433?database=mgm-poc-database&connection+timeout=30&charset=utf8mb4"
+var DbType = "mssql"
 
 func InitialMigration() {
-	db, err := gorm.Open(dbType, sqlConnectionString)
+	db, err := gorm.Open(DbType, SqlConnectionString)
 	if err != nil {
 		log.Fatalf("Error connecting to database: %s", err.Error())
 	} else {
@@ -20,4 +20,5 @@ func InitialMigration() {
 
 	// Migrate the schema
 	db.AutoMigrate(&models.User{})
+	db.AutoMigrate(&models.Customer{})
 }

@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"GoWebServiceWithCRUD/pkg/config"
 	"GoWebServiceWithCRUD/pkg/models"
 	"encoding/json"
 	"fmt"
@@ -11,11 +12,8 @@ import (
 	"net/http"
 )
 
-var sqlConnectionString = "sqlserver://mgm-poc-user:super123@BCde@mgm-poc-db.database.windows.net:1433?database=mgm-poc-database&connection+timeout=30&charset=utf8mb4"
-var dbType = "mssql"
-
 func AllUsers(w http.ResponseWriter, r *http.Request) {
-	db, err := gorm.Open(dbType, sqlConnectionString)
+	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
 	if err != nil {
 		log.Fatalf("Error connecting to database: %s", err.Error())
 	} else {
@@ -33,7 +31,7 @@ func AllUsers(w http.ResponseWriter, r *http.Request) {
 func NewUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("New User Endpoint Hit")
 
-	db, err := gorm.Open(dbType, sqlConnectionString)
+	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
 	if err != nil {
 		log.Fatalf("Error connecting to database: %s", err.Error())
 	} else {
@@ -54,7 +52,7 @@ func NewUser(w http.ResponseWriter, r *http.Request) {
 
 
 func DeleteUser(w http.ResponseWriter, r *http.Request) {
-	db, err := gorm.Open(dbType, sqlConnectionString)
+	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
 	if err != nil {
 		log.Fatalf("Error connecting to database: %s", err.Error())
 	} else {
@@ -76,7 +74,7 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 }
 
 func UpdateUser(w http.ResponseWriter, r *http.Request) {
-	db, err := gorm.Open("sqlite3", "test.db")
+	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
 	if err != nil {
 		panic("failed to connect database")
 	}

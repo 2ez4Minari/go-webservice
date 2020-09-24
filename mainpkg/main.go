@@ -13,8 +13,9 @@ import (
 func main() {
 	fmt.Println("Rest API v2.0 - Mux Routers")
 	config.InitialMigration()
+	routes.CustomerEndPointsRequestHandler()
 	routes.UserEndPointsRequestHandler()
-	routes.UserEndPointsRequestHandler()
+	routes.ArticleEndPointsRequestHandler()
 }
 
 
