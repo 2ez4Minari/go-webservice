@@ -18,8 +18,6 @@ func CustomerEndPointsRequestHandler() {
 	myRouter.HandleFunc("/customer/delete/{name}", controller.DeleteCustomer).Methods("DELETE")
 	myRouter.HandleFunc("/customer/update/{name}", controller.UpdateCustomer).Methods("PUT")
 
-
-
 	// finally, instead of passing in nil, we want
 	// to pass in our newly created router as the second
 	// argument

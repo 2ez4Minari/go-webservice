@@ -50,7 +50,6 @@ func NewUser(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "New User Successfully Created")
 }
 
-
 func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
 	if err != nil {

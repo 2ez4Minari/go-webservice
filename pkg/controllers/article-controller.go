@@ -86,11 +86,11 @@ func UpdateArticle(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(models.Articles)
 }
 
-func ReturnSingleArticle(w http.ResponseWriter, r *http.Request){
+func ReturnSingleArticle(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	key := vars["id"]
 
-	fmt.Fprintf(w, "Key: " + key)
+	fmt.Fprintf(w, "Key: "+key)
 	// Loop over all of our Articles
 	// if the article.Id equals the key we pass in
 	// return the article encoded as JSON

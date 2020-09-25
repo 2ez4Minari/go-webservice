@@ -1,9 +1,9 @@
 package config
 
 import (
+	"GoWebServiceWithCRUD/pkg/models"
 	"github.com/jinzhu/gorm"
 	"log"
-	"GoWebServiceWithCRUD/pkg/models"
 )
 
 var SqlConnectionString = "sqlserver://mgm-poc-user:super123@BCde@mgm-poc-db.database.windows.net:1433?database=mgm-poc-database&connection+timeout=30&charset=utf8mb4"

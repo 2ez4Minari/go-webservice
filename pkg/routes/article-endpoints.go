@@ -20,8 +20,6 @@ func ArticleEndPointsRequestHandler() {
 	myRouter.HandleFunc("/article/{id}", controller.DeleteArticle).Methods("DELETE")
 	myRouter.HandleFunc("/article/update/{id}", controller.UpdateArticle).Methods("PUT")
 
-
-
 	// finally, instead of passing in nil, we want
 	// to pass in our newly created router as the second
 	// argument

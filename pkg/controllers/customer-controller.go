@@ -12,7 +12,6 @@ import (
 	"net/http"
 )
 
-
 func GetAllCustomers(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Get All Customers Endpoint Hit")
 
@@ -31,7 +30,7 @@ func GetAllCustomers(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(customers)
 }
 
-func GetSpecificCustomer(w http.ResponseWriter, r *http.Request){
+func GetSpecificCustomer(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Get Specific Customer Endpoint Hit")
 
 	db, err := gorm.Open(config.DbType, config.SqlConnectionString)
